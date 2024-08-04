@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>מחיר רכב</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap" rel="stylesheet">
+    <style>
+		label {
+		  display: block;
+		}
+       body {
+        font-family: 'Heebo Light', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+		direction: rtl;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login">
+        <h1>חיזוי מחיר הרכב</h1>
+        <h2>הזן את נתוני המכונית: </h2>
+		<form id="measurement-form"action="{{ url_for('predict')}}"method="post">
+			<label for="manufactor">יצרן:</label>
+			<input type="text" id="manufactor" name="manufactor"><br><br> 
+			<label for="model">דגם:</label>
+			<input type="text" id="model" name="model" required><br><br>
+			<label for="Year">שנת ייצור:</label>
+			<input type="number" id="Year" name="Year" required><br><br>
+			<label for="Hand">יד:</label>
+			<input type="number" id="Hand" name="Hand" required><br><br>
+			<label for="Km">קילומטר שעשה הרכב:</label>
+			<input type="number" id="Km" name="Km" required><br><br>
+			<label for="Gear">גיר:</label>
+			<input type="text" id="Gear" name="Gear" required><br><br>
+			<label for="Engine_type">סוג מנוע:</label>
+			<input type="text" id="Engine_type" name="Engine_type" required><br><br>
+			<label for="capacity_Engine">נפח מנוע:</label>
+			<input type="number" id="capacity_Engine" name="capacity_Engine" required><br><br>
+			<label for="Area">אזור:</label>
+			<input type="text" id="Area" name="Area" required><br><br>
+			<label for="City">עיר:</label>
+			<input type="text" id="City" name="City" required><br><br>
+			<label for="Color">צבע:</label>
+			<input type="text" id="Color" name="Color" required><br><br>	
+			<label for="Prev_ownership">בעלות קודמת:</label>
+			<input type="text" id="Prev_ownership" name="Prev_ownership" required><br><br>
+			<label for="Curr_ownership">בעלות נוכחית:</label>
+			<input type="text" id="Curr_ownership" name="Curr_ownership" required><br><br>
+			<label for="Cre_date">תאריך יצירת פרסום הרכב:</label>
+			<input type="date" id="Cre_date" name="Cre_date" required><br><br>
+			<button type="submit" class="btn btn-primary px-5" ">חיזוי מחיר הרכב</button>	
+		</form>
+    </div>
+  </body>
+</html>
+
